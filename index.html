@@ -7,7 +7,7 @@
     <link rel="shortcut icon" href="site/TemplateData/favicon.ico">
     <link rel="stylesheet" href="site/TemplateData/style.css">
   </head>
-  <body>
+  <body class="content-body">
     <div id="unity-container" class="unity-desktop">
       <canvas id="unity-canvas"></canvas>
       <div id="unity-loading-bar">
@@ -16,10 +16,10 @@
           <div id="unity-progress-bar-full"></div>
         </div>
       </div>
-      <div id="unity-footer">
+      <div class="unity-footer">
         <div id="unity-webgl-logo"></div>
         <div id="unity-fullscreen-button"></div>
-        <div id="unity-build-title">Araknoid</div>
+        <div id="unity-build-title">Brick Breaker</div>
       </div>
     </div>
     <script>
@@ -67,4 +67,26 @@
       document.body.appendChild(script);
     </script>
   </body>
+
+  <style>
+    @media (prefers-color-scheme: dark) {
+      .content-body {
+        background-color: black;
+      }
+
+      .unity-footer {
+        color: white
+      }
+    }
+
+    @media (prefers-color-scheme: light) {
+      .content-body {
+        background-color: white;
+      }
+
+      .unity-footer {
+        color: black
+      }
+    }
+  </style>
 </html>
