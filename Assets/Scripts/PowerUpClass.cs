@@ -8,7 +8,7 @@ public class PowerUpClass
 {
     public Action<GameObject> PowerUpStartCommand;
     public Action<GameObject> PowerUpEndCommand;
-    public int Duration;
+    public float Duration;
 
     public bool Stopped;
 
@@ -19,10 +19,21 @@ public class PowerUpClass
         Duration = duration;
     }
 
-    public async void RunPowerUp(GameObject gameObject)
+    public PowerUpClass() {
+        
+    }
+    // public async void RunPowerUp(GameObject gameObject)
+    // {
+    //     PowerUpStartCommand.Invoke(gameObject);
+    //     await Task.Delay(Duration);
+    //     PowerUpEndCommand.Invoke(gameObject);
+    // }
+
+
+    public IEnumerator RunPowerUpCoroutine(GameObject gameObject)
     {
         PowerUpStartCommand.Invoke(gameObject);
-        await Task.Delay(Duration);
+        yield return new WaitForSeconds(Duration);
         PowerUpEndCommand.Invoke(gameObject);
     }
 }

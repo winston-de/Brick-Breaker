@@ -26,7 +26,7 @@ public class God : MonoBehaviour
         collider2D = GetComponent<EdgeCollider2D>();
         
         AutoGen();
-        DoCountDown();
+        StartCoroutine(DoCountDown());
     }
 
     // Update is called once per frame
@@ -70,11 +70,11 @@ public class God : MonoBehaviour
         return GameObject.FindGameObjectsWithTag("Ball").Length < 1;
     }
 
-    private async void DoCountDown() {
+    private IEnumerator DoCountDown() {
         for (int i = 4; i > 0; i--)
         {
             CountdownText.text = i.ToString();
-            await Task.Delay(1000);
+            yield return new WaitForSeconds(1);
         }
 
         CountdownText.text = "";

@@ -27,12 +27,12 @@ public class Box : MonoBehaviour
             Health--;
             if (Health < 0)
             {
-                var rand = UnityEngine.Random.Range(0, 10);
+                var rand = UnityEngine.Random.Range(0, 2);
                 if (rand == 0)
                     DropExpandPowerUp();
 
-                if (rand == 1)
-                    DropMultiballPowerUp();
+                // if (rand == 1)
+                //     DropMultiballPowerUp();
 
                 Destroy(this.gameObject);
             }
@@ -44,7 +44,7 @@ public class Box : MonoBehaviour
         var go = Instantiate(PowerUpPrefab);
         go.transform.position = new Vector3(transform.position.x, transform.position.y);
         go.GetComponent<PowerUp>().PowerUpVal = new PowerUpClass(
-                async gameObject =>
+                gameObject =>
                 {
                     var delta = new Vector3(0.1f, 0.1f);
                     var time = 100f;
@@ -52,10 +52,10 @@ public class Box : MonoBehaviour
                     for (var i = 0; i < time / 5; i++)
                     {
                         gameObject.GetComponent<RectTransform>().localScale += delta / time;
-                        await Task.Delay(5);
+                        // await Task.Delay(5);
                     }
                 },
-                async gameObject =>
+                gameObject =>
                 {
                     var delta = new Vector3(0.1f, 0.1f);
                     var time = 100f;
@@ -63,9 +63,9 @@ public class Box : MonoBehaviour
                     for (var i = 0; i < time / 5; i++)
                     {
                         gameObject.GetComponent<RectTransform>().localScale -= delta / time;
-                        await Task.Delay(5);
+                        //await Task.Delay(5);
                     }
-                }, 3000);
+                }, 3);
     }
 
     public void DropMultiballPowerUp()

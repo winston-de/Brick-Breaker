@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Concurrent;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Threading.Tasks;
 using UnityEngine;
 
@@ -52,7 +53,8 @@ public class Paddle : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D other) {
         PowerUp powerUp;
         if(other.TryGetComponent<PowerUp>(out powerUp)) {
-            powerUp.PowerUpVal.RunPowerUp(gameObject);
+            StartCoroutine(powerUp.PowerUpVal.RunPowerUpCoroutine(gameObject));
+            // powerUp.PowerUpVal.RunPowerUp(gameObject);
             Destroy(other.gameObject);
         }
     }
