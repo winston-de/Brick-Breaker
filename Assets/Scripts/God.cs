@@ -78,7 +78,7 @@ public class God : MonoBehaviour
         }
 
         CountdownText.text = "";
-        GameObject.FindGameObjectWithTag("Ball").GetComponent<Rigidbody2D>().velocity = new Vector2(0, -13);
+        GameObject.FindGameObjectWithTag("Ball").GetComponent<Rigidbody2D>().velocity = new Vector2(8, -8);
         GameObject.FindGameObjectWithTag("Paddle").GetComponent<Paddle>().Freeze = false;
     }
 

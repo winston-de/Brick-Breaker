@@ -20,9 +20,9 @@ public class Box : MonoBehaviour
     {
     }
 
-    public void OnCollisionEnter2D(Collision2D collision)
+    public void OnTriggerEnter2D(Collider2D other)
     {
-        if (collision.collider.tag.Equals("Ball"))
+        if (other.tag.Equals("Ball"))
         {
             Health--;
             if (Health < 0)

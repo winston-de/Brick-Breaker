@@ -50,12 +50,8 @@ public class Paddle : MonoBehaviour
         // transform.eulerAngles = new Vector3(0, 0, 1) * delta_x * -15;
     }
     
-    private void OnTriggerEnter2D(Collider2D other) {
-        PowerUp powerUp;
-        if(other.TryGetComponent<PowerUp>(out powerUp)) {
-            StartCoroutine(powerUp.PowerUpVal.RunPowerUpCoroutine(gameObject));
-            // powerUp.PowerUpVal.RunPowerUp(gameObject);
-            Destroy(other.gameObject);
-        }
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        
     }
 }

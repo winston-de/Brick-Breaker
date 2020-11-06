@@ -27,4 +27,11 @@ public class Ball : MonoBehaviour
         }
             
     }
+
+    private void OnTriggerEnter2D(Collider2D other) {
+        if(!other.tag.Equals("Ball")) {
+            var rigidbody = GetComponent<Rigidbody2D>();
+            rigidbody.velocity = new Vector3(rigidbody.velocity.x, rigidbody.velocity.y * -1);
+        }
+    }
 }

@@ -523,20 +523,35 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3588579471663622496, guid: 74d14c0b8cdba2c4eb28b7437c6f43b0,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5078590426138133220, guid: 74d14c0b8cdba2c4eb28b7437c6f43b0,
         type: 3}
       propertyPath: m_Name
       value: Ball
       objectReference: {fileID: 0}
+    - target: {fileID: 5078590426138133222, guid: 74d14c0b8cdba2c4eb28b7437c6f43b0,
+        type: 3}
+      propertyPath: m_BodyType
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5078590426138133222, guid: 74d14c0b8cdba2c4eb28b7437c6f43b0,
+        type: 3}
+      propertyPath: m_Simulated
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5078590426138133224, guid: 74d14c0b8cdba2c4eb28b7437c6f43b0,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.021936715
+      value: -7.53
       objectReference: {fileID: 0}
     - target: {fileID: 5078590426138133224, guid: 74d14c0b8cdba2c4eb28b7437c6f43b0,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.5118291
+      value: -3.39
       objectReference: {fileID: 0}
     - target: {fileID: 5078590426138133224, guid: 74d14c0b8cdba2c4eb28b7437c6f43b0,
         type: 3}
@@ -721,7 +736,7 @@ EdgeCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
